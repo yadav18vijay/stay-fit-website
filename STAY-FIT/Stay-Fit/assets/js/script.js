@@ -80,3 +80,70 @@ const reveal = function () {
 
 reveal();
 addEventOnElem(window, "scroll", reveal);
+
+/**
+ * Course search and filtering
+ */
+
+const courseSearch = document.querySelector("#course-search");
+const filterButtons = document.querySelectorAll(".filter-btn");
+const courseCards = document.querySelectorAll(".course-card");
+const courseList = document.querySelector(".course .grid-list");
+
+const noResultsMessage = document.createElement("p");
+noResultsMessage.className = "course-no-results";
+noResultsMessage.textContent = "No courses found. Try a different search or category.";
+
+if (courseList) {
+  courseList.parentElement.appendChild(noResultsMessage);
+}
+
+let currentFilter = "all";
+
+const filterCourses = function () {
+  const searchTerm = courseSearch.value.toLowerCase().trim();
+  let visibleCourses = 0;
+
+  courseCards.forEach(function (card) {
+    const title = card.querySelector(".card-title").textContent.toLowerCase();
+    const category = card.dataset.category;
+
+    const matchesSearch = title.includes(searchTerm);
+    const matchesFilter =
+      currentFilter === "all" || category === currentFilter;
+
+    if (matchesSearch && matchesFilter) {
+      card.parentElement.style.display = "";
+      card.classList.remove("hidden");
+      visibleCourses++;
+    } else {
+      card.parentElement.style.display = "none";
+      card.classList.add("hidden");
+    }
+  });
+
+  if (visibleCourses === 0) {
+    noResultsMessage.classList.add("active");
+  } else {
+    noResultsMessage.classList.remove("active");
+  }
+};
+
+if (courseSearch) {
+  courseSearch.addEventListener("input", filterCourses);
+}
+
+filterButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+
+    filterButtons.forEach(function (btn) {
+      btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    currentFilter = button.dataset.filter;
+
+    filterCourses();
+  });
+});

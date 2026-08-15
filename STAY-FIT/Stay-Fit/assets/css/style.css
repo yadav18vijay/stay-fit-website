@@ -644,6 +644,90 @@ body {
   #COURSE
 \*-----------------------------------*/
 
+/* Course Search & Filter */
+
+.course-filter-wrapper {
+  margin-block: -20px 50px;
+}
+
+.course-search {
+  position: relative;
+  max-width: 500px;
+  margin-inline: auto;
+  margin-block-end: 25px;
+}
+
+.course-search ion-icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: var(--blue-green-color-wheel);
+  font-size: 20px;
+}
+
+.course-search input {
+  background-color: var(--cultured);
+  color: var(--black-chocolate);
+  font-size: var(--fs-5);
+  padding: 15px 20px 15px 50px;
+  border: 1px solid var(--blue-green-color-wheel_10);
+  border-radius: var(--radius-50);
+  outline: none;
+  transition: var(--transition-1);
+}
+
+.course-search input:focus {
+  border-color: var(--blue-green-color-wheel);
+  box-shadow: 0 0 0 3px var(--blue-green-color-wheel_10);
+}
+
+.course-search input::placeholder {
+  color: var(--spanish-gray);
+}
+
+.course-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.filter-btn {
+  color: var(--black-chocolate);
+  background-color: var(--white);
+  border: 1px solid var(--blue-green-color-wheel_10);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
+  padding: 8px 20px;
+  border-radius: var(--radius-50);
+  cursor: pointer;
+  transition: var(--transition-1);
+}
+
+.filter-btn:is(:hover, :focus),
+.filter-btn.active {
+  color: var(--white);
+  background-color: var(--blue-green-color-wheel);
+  border-color: var(--blue-green-color-wheel);
+}
+
+.course-card.hidden {
+  display: none;
+}
+
+.course-no-results {
+  display: none;
+  text-align: center;
+  color: var(--spanish-gray);
+  font-size: var(--fs-5);
+  padding-block: 30px;
+}
+
+.course-no-results.active {
+  display: block;
+}
+
 .course-card .card-banner { margin-block-end: 30px; }
 
 .course-card .card-content {

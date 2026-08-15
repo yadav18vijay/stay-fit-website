@@ -285,10 +285,41 @@
             <h2 class="h2 section-title">Fitness & Nutrition Courses</h2>
           </div>
 
+          <div class="course-filter-wrapper">
+
+            <div class="course-search">
+              <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+              <input
+                type="search"
+                id="course-search"
+                placeholder="Search courses..."
+                aria-label="Search courses">
+            </div>
+
+            <div class="course-filter" role="group" aria-label="Filter courses">
+              <button type="button" class="filter-btn active" data-filter="all">
+                All
+              </button>
+
+              <button type="button" class="filter-btn" data-filter="fitness">
+                Fitness
+              </button>
+
+              <button type="button" class="filter-btn" data-filter="nutrition">
+                Nutrition
+              </button>
+
+              <button type="button" class="filter-btn" data-filter="weight-loss">
+                Weight Loss
+              </button>
+            </div>
+
+          </div>
+
           <ul class="grid-list">
 
             <li>
-              <div class="course-card">
+              <div class="course-card" data-category="nutrition">
 
                 <figure class="card-banner img-holder" style="--width: 350; --height: 300;">
                   <img src="./assets/images/courses-1.jpg" width="350" height="300" loading="lazy"
@@ -327,7 +358,7 @@
             </li>
 
             <li>
-              <div class="course-card">
+              <div class="course-card" data-category="nutrition">
 
                 <figure class="card-banner img-holder" style="--width: 350; --height: 300;">
                   <img src="./assets/images/courses-2.jpg" width="350" height="300" loading="lazy"
@@ -366,7 +397,7 @@
             </li>
 
             <li>
-              <div class="course-card">
+              <div class="course-card" data-category="nutrition">
 
                 <figure class="card-banner img-holder" style="--width: 350; --height: 300;">
                   <img src="./assets/images/courses-3.jpg" width="350" height="300" loading="lazy"
@@ -405,7 +436,7 @@
             </li>
 
             <li>
-              <div class="course-card">
+              <div class="course-card" data-category="fitness">
 
                 <figure class="card-banner img-holder" style="--width: 350; --height: 300;">
                   <img src="./assets/images/courses-4.jpg" width="350" height="300" loading="lazy"
@@ -444,7 +475,7 @@
             </li>
 
             <li>
-              <div class="course-card">
+              <div class="course-card" data-category="fitness">
 
                 <figure class="card-banner img-holder" style="--width: 350; --height: 300;">
                   <img src="./assets/images/courses-5.jpg" width="350" height="300" loading="lazy"
@@ -483,7 +514,7 @@
             </li>
 
             <li>
-              <div class="course-card">
+              <div class="course-card" data-category="weight-loss">
 
                 <figure class="card-banner img-holder" style="--width: 350; --height: 300;">
                   <img src="./assets/images/courses-6.jpg" width="350" height="300" loading="lazy"
