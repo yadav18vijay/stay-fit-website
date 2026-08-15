@@ -759,7 +759,130 @@ body {
 .course-card .card-title:is(:hover, :focus) { color: var(--orange-web); }
 
 
+/*-----------------------------------*\
+  #BMI CALCULATOR
+\*-----------------------------------*/
 
+.bmi-section {
+  background-color: var(--cultured);
+}
+
+.bmi-section .section-text {
+  max-width: 600px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.bmi-wrapper {
+  max-width: 900px;
+  margin-inline: auto;
+  margin-block-start: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 30px;
+}
+
+.bmi-form,
+.bmi-result {
+  background-color: var(--white);
+  padding: 35px;
+  border-radius: var(--radius-10);
+  box-shadow: var(--shadow-1);
+}
+
+.bmi-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input-group {
+  margin-block-end: 20px;
+}
+
+.input-group label {
+  display: block;
+  color: var(--black-chocolate);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
+  margin-block-end: 8px;
+}
+
+.input-group input {
+  width: 100%;
+  background-color: var(--cultured);
+  color: var(--black-chocolate);
+  font-size: var(--fs-5);
+  padding: 14px 16px;
+  border: 1px solid var(--blue-green-color-wheel_10);
+  border-radius: var(--radius-5);
+  outline: none;
+  transition: var(--transition-1);
+}
+
+.input-group input:focus {
+  border-color: var(--blue-green-color-wheel);
+  box-shadow: 0 0 0 3px var(--blue-green-color-wheel_10);
+}
+
+.bmi-form .btn {
+  width: 100%;
+  justify-content: center;
+  margin-block-start: 5px;
+}
+
+.bmi-error {
+  min-height: 20px;
+  color: var(--bittersweet);
+  font-size: var(--fs-7);
+  text-align: center;
+  margin-block-start: 12px;
+}
+
+.bmi-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.result-label {
+  color: var(--spanish-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
+  margin-block-end: 10px;
+}
+
+.bmi-value {
+  color: var(--blue-green-color-wheel);
+  font-size: 4rem;
+  font-weight: var(--fw-700);
+  line-height: 1;
+  margin-block-end: 15px;
+}
+
+.bmi-category {
+  color: var(--black-chocolate);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-600);
+}
+
+/* Mobile BMI */
+
+@media (max-width: 767px) {
+
+  .bmi-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .bmi-form,
+  .bmi-result {
+    padding: 25px;
+  }
+
+}
 
 
 /*-----------------------------------*\
@@ -1151,7 +1274,6 @@ body {
    */
 
   .course .grid-list { grid-template-columns: 1fr 1fr; }
-
 
 
   /**

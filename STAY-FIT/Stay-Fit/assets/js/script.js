@@ -147,3 +147,72 @@ filterButtons.forEach(function (button) {
     filterCourses();
   });
 });
+
+/**
+ * BMI Calculator
+ */
+
+const bmiHeight = document.querySelector("#bmi-height");
+const bmiWeight = document.querySelector("#bmi-weight");
+const calculateBmiButton = document.querySelector("#calculate-bmi");
+const bmiValue = document.querySelector("#bmi-value");
+const bmiCategory = document.querySelector("#bmi-category");
+const bmiError = document.querySelector("#bmi-error");
+
+if (
+  bmiHeight &&
+  bmiWeight &&
+  calculateBmiButton &&
+  bmiValue &&
+  bmiCategory &&
+  bmiError
+) {
+  const calculateBMI = function () {
+    const height = parseFloat(bmiHeight.value);
+    const weight = parseFloat(bmiWeight.value);
+
+    bmiError.textContent = "";
+
+    if (!height || !weight || height <= 0 || weight <= 0) {
+      bmiError.textContent = "Please enter a valid height and weight.";
+      bmiValue.textContent = "--";
+      bmiCategory.textContent = "Enter your details above";
+      return;
+    }
+
+    if (height < 50 || height > 250) {
+      bmiError.textContent = "Height must be between 50 and 250 cm.";
+      return;
+    }
+
+    if (weight < 10 || weight > 300) {
+      bmiError.textContent = "Weight must be between 10 and 300 kg.";
+      return;
+    }
+
+    const heightInMeters = height / 100;
+    const bmi = weight / (heightInMeters * heightInMeters);
+
+    bmiValue.textContent = bmi.toFixed(1);
+
+    if (bmi < 18.5) {
+      bmiCategory.textContent = "Underweight";
+    } else if (bmi < 25) {
+      bmiCategory.textContent = "Normal Weight";
+    } else if (bmi < 30) {
+      bmiCategory.textContent = "Overweight";
+    } else {
+      bmiCategory.textContent = "Obese";
+    }
+  };
+
+  calculateBmiButton.addEventListener("click", calculateBMI);
+
+  [bmiHeight, bmiWeight].forEach(function (input) {
+    input.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        calculateBMI();
+      }
+    });
+  });
+}
