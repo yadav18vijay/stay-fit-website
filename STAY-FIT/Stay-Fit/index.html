@@ -229,7 +229,79 @@
         </div>
       </section>
 
+      <!--
+        - #BMI CALCULATOR
+      -->
 
+      <section class="section bmi-section" id="bmi">
+        <div class="container">
+
+          <p class="section-subtitle">Check Your Health</p>
+
+          <h2 class="h2 section-title">
+            Calculate Your BMI
+          </h2>
+
+          <p class="section-text">
+            Enter your height and weight to calculate your Body Mass Index
+            and understand your current BMI category.
+          </p>
+
+          <div class="bmi-wrapper">
+
+            <div class="bmi-form">
+
+              <div class="input-group">
+                <label for="bmi-height">Height (cm)</label>
+
+                <input
+                  type="number"
+                  id="bmi-height"
+                  placeholder="Example: 170"
+                  min="50"
+                  max="250"
+                  step="0.1">
+              </div>
+
+              <div class="input-group">
+                <label for="bmi-weight">Weight (kg)</label>
+
+                <input
+                  type="number"
+                  id="bmi-weight"
+                  placeholder="Example: 65"
+                  min="10"
+                  max="300"
+                  step="0.1">
+              </div>
+
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="calculate-bmi">
+                Calculate BMI
+              </button>
+
+              <p class="bmi-error" id="bmi-error"></p>
+
+            </div>
+
+            <div class="bmi-result" id="bmi-result">
+
+              <p class="result-label">Your BMI</p>
+
+              <p class="bmi-value" id="bmi-value">--</p>
+
+              <p class="bmi-category" id="bmi-category">
+                Enter your details above
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
 
 
 
