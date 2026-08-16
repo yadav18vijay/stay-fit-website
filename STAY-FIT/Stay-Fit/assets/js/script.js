@@ -147,3 +147,69 @@ filterButtons.forEach(function (button) {
     filterCourses();
   });
 });
+
+// Contact Form Validation
+
+const contactForm = document.querySelector("#contact-form");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.querySelector("#contact-name");
+    const email = document.querySelector("#contact-email");
+    const message = document.querySelector("#contact-message");
+
+    const nameError = document.querySelector("#name-error");
+    const emailError = document.querySelector("#email-error");
+    const messageError = document.querySelector("#message-error");
+    const successMessage = document.querySelector("#form-success");
+
+    // Clear previous messages
+    nameError.textContent = "";
+    emailError.textContent = "";
+    messageError.textContent = "";
+    successMessage.textContent = "";
+
+    let isValid = true;
+
+    // Name validation
+    if (name.value.trim() === "") {
+      nameError.textContent = "Please enter your name.";
+      isValid = false;
+    }
+
+    // Email validation
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|in|org|net|edu|gov)$/i;
+
+    if (email.value.trim() === "") {
+      emailError.textContent = "Please enter your email.";
+      isValid = false;
+    } else if (!emailPattern.test(email.value.trim())) {
+      emailError.textContent = "Please enter a valid email address.";
+      isValid = false;
+    }
+
+    // Message validation
+    const messageText = message.value.trim();
+
+    if (messageText === "") {
+      messageError.textContent = "Please enter your message.";
+      isValid = false;
+    } else if (messageText.length < 10) {
+      messageError.textContent = "Message must be at least 10 characters.";
+      isValid = false;
+    }
+
+    // Stop if validation fails
+    if (!isValid) {
+      return;
+    }
+
+    // Show success message
+    successMessage.textContent = "Thank you! Your message has been submitted.";
+
+    // Clear form
+    contactForm.reset();
+  });
+}

@@ -836,7 +836,86 @@ body {
 .blog-card .card-text { font-size: var(--fs-5); }
 
 
+/*-----------------------------------*\
+  #CONTACT
+\*-----------------------------------*/
 
+.contact {
+  padding-block: 80px;
+}
+
+.contact .section-subtitle,
+.contact .section-title,
+.contact .section-text {
+  text-align: center;
+}
+
+.contact .section-text {
+  max-width: 600px;
+  margin-inline: auto;
+  margin-block-end: 35px;
+}
+
+.contact-form {
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.input-wrapper {
+  display: grid;
+  gap: 20px;
+}
+
+.input-group {
+  margin-block-end: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 600;
+  margin-block-end: 8px;
+}
+
+.contact-form .input-field {
+  width: 100%;
+  padding: 15px 18px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333;
+  font: inherit;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form .input-field:focus {
+  border-color: #0f5c4d;
+  box-shadow: 0 0 0 3px rgba(15, 92, 77, 0.1);
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-form .btn {
+  margin-block-start: 5px;
+}
+
+.form-error {
+  display: block;
+  min-height: 20px;
+  margin-block-start: 5px;
+  font-size: 13px;
+  color: #d93025;
+}
+
+.form-success {
+  margin-block-start: 15px;
+  font-weight: 600;
+  text-align: center;
+  min-height: 20px;
+}
 
 
 /*-----------------------------------*\
@@ -1160,7 +1239,10 @@ body {
 
   .blog-card .h3 { --fs-4: 2.4rem; }
 
-
+  /* contact */
+  .contact {
+    padding-block: 100px;
+  }
 
   /**
    * APP
@@ -1295,7 +1377,11 @@ body {
 
   .blog-card { padding: 45px; }
 
-
+  /* contact */
+  .input-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
 
   /**
    * APP
