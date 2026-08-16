@@ -1038,7 +1038,52 @@ body {
 }
 
 
+/*-----------------------------------*\
+  #DARK MODE
+\*-----------------------------------*/
 
+body.dark-mode {
+  --white: hsl(210, 10%, 12%);
+  --cultured: hsl(210, 10%, 16%);
+  --black-chocolate: hsl(0, 0%, 95%);
+  --davys-gray: hsl(210, 5%, 75%);
+  --light-gray: hsl(210, 5%, 35%);
+  --onyx: hsl(210, 10%, 85%);
+}
+
+body,
+.header,
+.navbar,
+.course-card,
+.blog-card,
+.app-card,
+.footer {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme toggle */
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  margin-inline-start: 10px;
+  border-radius: 50%;
+  background-color: var(--cultured);
+  color: var(--black-chocolate);
+  font-size: 22px;
+  transition: var(--transition-1);
+}
+
+.theme-toggle:is(:hover, :focus) {
+  background-color: var(--orange-web);
+  color: var(--white);
+}
+
+.theme-toggle ion-icon {
+  --ionicon-stroke-width: 40px;
+}
 
 
 /*-----------------------------------*\
