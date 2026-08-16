@@ -147,3 +147,45 @@ filterButtons.forEach(function (button) {
     filterCourses();
   });
 });
+
+/**
+ * Dark / Light mode
+ */
+
+const themeToggle = document.querySelector("#theme-toggle");
+const themeIcon = document.querySelector(".theme-icon");
+
+const applyTheme = function (isDark) {
+  document.body.classList.toggle("dark-mode", isDark);
+
+  if (isDark) {
+    themeIcon.setAttribute("name", "sunny-outline");
+    themeToggle.setAttribute("aria-label", "Switch to light mode");
+  } else {
+    themeIcon.setAttribute("name", "moon-outline");
+    themeToggle.setAttribute("aria-label", "Switch to dark mode");
+  }
+};
+
+// Load saved theme
+const savedTheme = localStorage.getItem("stay-fit-theme");
+
+if (savedTheme === "dark") {
+  applyTheme(true);
+} else {
+  applyTheme(false);
+}
+
+// Toggle theme
+if (themeToggle) {
+  themeToggle.addEventListener("click", function () {
+    const isDark = document.body.classList.contains("dark-mode");
+
+    applyTheme(!isDark);
+
+    localStorage.setItem(
+      "stay-fit-theme",
+      !isDark ? "dark" : "light"
+    );
+  });
+}
