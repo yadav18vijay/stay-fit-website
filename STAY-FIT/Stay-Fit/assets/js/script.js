@@ -147,3 +147,45 @@ filterButtons.forEach(function (button) {
     filterCourses();
   });
 });
+
+// Testimonials Slider
+
+const testimonialTrack = document.querySelector("#testimonial-track");
+const testimonialCards = document.querySelectorAll(".testimonial-card");
+const testimonialPrev = document.querySelector("#testimonial-prev");
+const testimonialNext = document.querySelector("#testimonial-next");
+
+let testimonialIndex = 0;
+
+const showTestimonial = function (index) {
+  if (!testimonialTrack || testimonialCards.length === 0) return;
+
+  testimonialIndex = index;
+
+  testimonialTrack.style.transform =
+    `translateX(-${testimonialIndex * 100}%)`;
+};
+
+if (testimonialPrev && testimonialNext) {
+
+  testimonialPrev.addEventListener("click", function () {
+    testimonialIndex--;
+
+    if (testimonialIndex < 0) {
+      testimonialIndex = testimonialCards.length - 1;
+    }
+
+    showTestimonial(testimonialIndex);
+  });
+
+  testimonialNext.addEventListener("click", function () {
+    testimonialIndex++;
+
+    if (testimonialIndex >= testimonialCards.length) {
+      testimonialIndex = 0;
+    }
+
+    showTestimonial(testimonialIndex);
+  });
+
+}

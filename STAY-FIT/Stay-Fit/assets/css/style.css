@@ -836,7 +836,88 @@ body {
 .blog-card .card-text { font-size: var(--fs-5); }
 
 
+/*-----------------------------------*\
+  #TESTIMONIALS
+\*-----------------------------------*/
 
+.testimonials {
+  background-color: var(--cultured);
+  overflow: hidden;
+}
+
+.testimonials .section-text {
+  max-width: 600px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.testimonial-slider {
+  max-width: 900px;
+  margin: 40px auto 0;
+  overflow: hidden;
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.testimonial-card {
+  min-width: 100%;
+  background-color: var(--white);
+  padding: 35px 25px;
+  text-align: center;
+  border-radius: var(--radius-10);
+  box-shadow: var(--shadow-1);
+}
+
+.testimonial-rating {
+  color: var(--orange-web);
+  font-size: 2rem;
+  letter-spacing: 3px;
+  margin-block-end: 15px;
+}
+
+.testimonial-text {
+  max-width: 650px;
+  margin-inline: auto;
+  font-size: var(--fs-5);
+  margin-block-end: 20px;
+}
+
+.testimonial-name {
+  color: var(--black-chocolate);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-600);
+}
+
+.testimonial-role {
+  color: var(--spanish-gray);
+  font-size: var(--fs-6);
+}
+
+.testimonial-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-block-start: 25px;
+}
+
+.testimonial-btn {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  background-color: var(--blue-green-color-wheel);
+  color: var(--white);
+  border-radius: 50%;
+  font-size: 20px;
+  transition: var(--transition-1);
+}
+
+.testimonial-btn:is(:hover, :focus) {
+  background-color: var(--orange-web);
+}
 
 
 /*-----------------------------------*\
@@ -1295,7 +1376,13 @@ body {
 
   .blog-card { padding: 45px; }
 
+  .testimonial-card {
+    padding: 45px;
+  }
 
+  .testimonial-text {
+    font-size: var(--fs-4);
+  }
 
   /**
    * APP
@@ -1417,7 +1504,13 @@ body {
 
   .blog-card { padding: 30px; }
 
+  .testimonial-slider {
+    max-width: 1000px;
+  }
 
+  .testimonial-card {
+    padding: 50px;
+  }
 
   /**
    * APP
